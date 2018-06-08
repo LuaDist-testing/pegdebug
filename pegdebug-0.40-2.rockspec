@@ -1,33 +1,35 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "pegdebug"
-version = "0.40-1"
+version = "0.40-2"
 
 -- LuaDist source
 source = {
-  tag = "0.40-1",
+  tag = "0.40-2",
   url = "git://github.com/LuaDist-testing/pegdebug.git"
 }
 -- Original source
 -- source = {
 --    url = "git://github.com/pkulchenko/PegDebug.git",
---    tag = "0.40"
+--    tag = "0.40",
 -- }
 
 description = {
    summary = "PegDebug is a trace debugger for LPeg rules and captures.",
    detailed = "PegDebug is a trace debugger for LPeg rules and captures.",
    homepage = "http://github.com/pkulchenko/PegDebug",
+   maintainer = "Paul Kulchenko <paul@kulchenko.com>",
    license = "MIT/X11",
 }
 
 dependencies = {
    "lua >= 5.1",
+   "lpeg",
 }
 
 build = {
    type = "builtin",
-   install = {
-      lua = { pegdebug = "src/pegdebug.lua" }
+   modules = {
+      ["pegdebug"] = "src/pegdebug.lua",
    },
 }
